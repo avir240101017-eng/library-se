@@ -35,4 +35,16 @@ class TestLibrarySprint2(unittest.TestCase):
         lib.borrow_book("B1")
         lib.return_book("B1")
         self.assertFalse(lib.books["B1"]["borrowed"])
+class TestLibrarySprint3(unittest.TestCase):
+
+    def test_report_contains_header(self):
+        lib = Library()
+        report = lib.generate_report()
+        self.assertIn("Book ID | Title | Author | Status", report)
+
+    def test_report_contains_book(self):
+        lib = Library()
+        lib.add_book("B1", "1984", "George Orwell")
+        report = lib.generate_report()
+        self.assertIn("1984", report)
 

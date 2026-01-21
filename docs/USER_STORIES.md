@@ -3,3 +3,5 @@
 US1: As a librarian, I want to add books so that the library can track them.
 
 US2: As a librarian, I want to borrow and return books so that availability is maintained.
+
+US3: As a librarian, I want a report so that I can see library status.

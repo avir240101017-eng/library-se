@@ -7,3 +7,4 @@
 | US2 | Borrow Book | borrow_book() | test_borrow_available_book | v0.2 |
 | US2 | Borrow Error | borrow_book() | test_borrow_unavailable_book | v0.2 |
 | US2 | Return Book | return_book() | test_return_book | v0.2 |
+| US3 | Report | generate_report() | test_report_contains_header | v0.3 |
