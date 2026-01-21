@@ -14,4 +14,25 @@ class TestLibrarySprint1(unittest.TestCase):
         lib.add_book("B1", "1984", "George Orwell")
         with self.assertRaises(LibraryError):
             lib.add_book("B1", "Animal Farm", "George Orwell")
+class TestLibrarySprint2(unittest.TestCase):
+
+    def test_borrow_available_book(self):
+        lib = Library()
+        lib.add_book("B1", "1984", "George Orwell")
+        lib.borrow_book("B1")
+        self.assertTrue(lib.books["B1"]["borrowed"])
+
+    def test_borrow_unavailable_book(self):
+        lib = Library()
+        lib.add_book("B1", "1984", "George Orwell")
+        lib.borrow_book("B1")
+        with self.assertRaises(LibraryError):
+            lib.borrow_book("B1")
+
+    def test_return_book(self):
+        lib = Library()
+        lib.add_book("B1", "1984", "George Orwell")
+        lib.borrow_book("B1")
+        lib.return_book("B1")
+        self.assertFalse(lib.books["B1"]["borrowed"])
 

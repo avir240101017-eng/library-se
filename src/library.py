@@ -14,4 +14,15 @@ class Library:
             "author": author,
             "borrowed": False
         }
+    def borrow_book(self, book_id):
+        if book_id not in self.books:
+            raise LibraryError("Book not found")
+        if self.books[book_id]["borrowed"]:
+            raise LibraryError("Book already borrowed")
+        self.books[book_id]["borrowed"] = True
+
+    def return_book(self, book_id):
+        if book_id not in self.books:
+            raise LibraryError("Book not found")
+        self.books[book_id]["borrowed"] = False
 
